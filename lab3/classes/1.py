@@ -5,9 +5,9 @@ class Text:
         self.string= input("enter your string:")
 
     def printString(self):
-        print(self.string)
+        print(self.string.upper())
 
 #test
 t=Text("space")
-t.getString
-t.printString
+t.getString()
+t.printString()
