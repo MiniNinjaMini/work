@@ -6,7 +6,7 @@ file_path = Path("sample-data.json")
 with file_path.open("r", encoding="utf-8") as file:
     data = json.load(file)
 
-# Extract interface details
+#рисую табличку
 print("Interface Status")
 print("=" * 80)
 print(f"{'DN':<50} {'Description':<15} {'Speed':<10} {'MTU':<5} ")
