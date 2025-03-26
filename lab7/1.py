@@ -36,7 +36,7 @@ while not done:
         seconds_number=today.second
         screen.fill((0, 0, 0))
         screen.blit(clock_picture, (0, 0))
-        list=rot_center(minute,-6*minute_number,140,105)
+        list=rot_center(minute,-6*minute_number-45,140,105)
         screen.blit(list[0],list[1])
         list=rot_center(second,-6*seconds_number,140,105)
         screen.blit(list[0],list[1])
