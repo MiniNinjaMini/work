@@ -75,16 +75,29 @@ class Player(pygame.sprite.Sprite):
                 self.rect.move_ip(5, 0)
 
     def collect_coin(self, coins):
-        collisions = pygame.sprite.spritecollide(self, coins, True)
-        for coin in collisions:
-            return True
-        return False
+        for coin in coins:
+            if abs(self.rect[0]-coin.rect[0])<44 and abs(self.rect[1]-coin.rect[1])<42:  # Check if player collides with coin
+                '''print('yappy')'''
+                coins.remove(coin)
+                all_sprites.remove(coin)  # Remove coin from the group
+                return True
+                
+            '''print('chtoto')
+            print(coin.rect)
+            print(coin.rect[0])
+            print(self.rect)
+            print(abs(self.rect[0]-coin.rect[0]))
+            print(abs(self.rect[1]-coin.rect[1]))'''
+        return False # No coin collected
 
+    
+
+coin=pygame.image.load("coin1.png")
 
 class Coin(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load("coin1.png")
+        self.image = coin
         self.rect = self.image.get_rect()
         self.rect.center = (random.randint(40, SCREEN_WIDTH - 40), 0)
 
@@ -93,7 +106,7 @@ class Coin(pygame.sprite.Sprite):
         if self.rect.top > 600:
             self.rect.top = 0
             self.rect.center = (random.randint(40, SCREEN_WIDTH - 40), 0)
-
+        
 
 # Setting up Sprites
 P1 = Player()
@@ -166,6 +179,6 @@ while not done:
         time.sleep(2)
         pygame.quit()
         sys.exit()
-
+    
     pygame.display.update()
     FramePerSec.tick(FPS)

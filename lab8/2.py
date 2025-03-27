@@ -112,22 +112,22 @@ while not done:
 
     if direction == "right":
         if head_square[0]+10==width:
-            head_square[0]=0
+            game_over("times new roman",45,(128,128,128))
         else:
             head_square[0] += 10
     if direction == "left":
         if head_square[0]-10==-10:
-            head_square[0]=width-10
+            game_over("times new roman",45,(128,128,128))
         else:
             head_square[0] -= 10
     if direction == "up":
         if head_square[1]-10==-10:
-            head_square[1]= height-10
+            game_over("times new roman",45,(128,128,128))
         else:
             head_square[1] -= 10
     if direction == "down":
         if head_square[1]+10==height:
-            head_square[1]=0
+            game_over("times new roman",45,(128,128,128))
         else:
             head_square[1] += 10
 

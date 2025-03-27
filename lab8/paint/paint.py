@@ -89,7 +89,7 @@ x2 = 10
 y2 = 10
 
 
-clear0 = pygame.image.load('lab8/paint/clear2.png')
+clear0 = pygame.image.load('clear2.png')
 clearImage = pygame.transform.scale(clear0, (40, 40))
 
 # main logic
